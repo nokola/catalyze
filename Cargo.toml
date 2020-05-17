@@ -1,0 +1,40 @@
+[package]
+name = "catalyze"
+version = "0.1.0"
+authors = ["Nokola <nikolami@outlook.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+nvg = "0.5.9"
+slab = "0.4.2"
+anyhow = "1.0.26"
+glam = {version = "0.8", features = ["scalar-math"] }
+# note: color-backtrace does not work for wasm32-unknown-unknown due to memmap dependency
+# color-backtrace = { version = "0.3" }
+
+[dependencies.miniquad]
+git = "https://github.com/not-fl3/miniquad"
+rev = "ac6025ad2bbf58e6ae56d87c7c880a2b0577d9d7"
+
+[dependencies.nvg_miniquad]
+git = "https://github.com/nokola/nvg-miniquad"
+
+# Uncomment for small builds
+[profile.release]
+lto = "thin"
+
+[package.metadata.android]
+# Specifies the array of targets to build for.
+# Defaults to "armv7-linux-androideabi", "aarch64-linux-android", "i686-linux-android".
+build_targets = [ "armv7-linux-androideabi" ]
+fullscreen = true
+opengles_version_major = 2
+opengles_version_minor = 0
+package_name = "nokola.app.drawaa"
+
+[package.metadata.android.application_attributes]
+"android:debuggable" = "true"
+"android:hardwareAccelerated" = "true"
