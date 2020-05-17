@@ -1,5 +1,5 @@
 # Catalyze
-Experimental immediatained (immediate+retained) easy to style mobile-friendly UI on top of miniquad.
+Experimental, immediatained (immediate+retained), easy to style mobile-friendly UI on top of miniquad.
 Inspired by Dear ImGUI/NanoVG/XAML.
 
 # Goals
